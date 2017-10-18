@@ -1,0 +1,32 @@
+h1{
+    font-size: 3.5em;
+}
+
+#main-row{
+    min-height: 100vh;
+}
+
+#left-col {
+    padding: 25px;
+    padding-top: 50px;
+
+    background-color: #050;
+    color: #fff;
+
+    text-align: center;
+    font-family: 'Shrikhand', cursive;    
+}
+
+#right-col{
+    background-color: #fff
+}
+
+#tomato-img > img{
+    width: 200px;
+    height: 200px;
+}
+
+.center{
+    text-align: center!important;
+    margin: 0 auto;
+}
