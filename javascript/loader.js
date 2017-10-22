@@ -89,7 +89,7 @@ var loader = {
 
     // Font to use for text in center of load bar
     textWeight: "bold",
-    textSize: 20,
+    textSize: 40,
     textFamily: "arial",
     get textFont(){
       return (this.textWeight + " " 
@@ -99,7 +99,7 @@ var loader = {
 
     // Edit return value to set text for middle of loader
     getText: function(){
-      return (loader.percentLoaded.toString() + "%");
+      return ("00:" + loader.percentLoaded.toString());
     },
   },
 
