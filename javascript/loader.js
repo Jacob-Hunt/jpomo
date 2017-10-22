@@ -79,13 +79,13 @@ var loader = {
     barWidth: 10,
 
     // Color of load bar
-    barColor: "#000",
+    barColor: "#fff",
 
     // Color of unloader portion of load bar
-    barBgColor: "#aaa",
+    barBgColor: "#080",
 
     // Color of text in center of load bar
-    textColor: "#000",
+    textColor: "#fff",
 
     // Font to use for text in center of load bar
     textWeight: "bold",
@@ -99,7 +99,7 @@ var loader = {
 
     // Edit return value to set text for middle of loader
     getText: function(){
-      return (loader.percentLoaded.toString() + " Baby Penguins!");
+      return (loader.percentLoaded.toString() + "%");
     },
   },
 
