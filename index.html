@@ -63,13 +63,13 @@
 
               <h4>WORK</h4>
 
-              <div class="up-btn">
+              <div class="up-btn" ng-click="incInterval(1)">
                 <i class="fa fa-caret-up fa-3x" aria-hidden="true"></i>
               </div>
 
-              <div class="dial-val">{{"0"}}</div>
+              <div class="dial-val">{{intervalVal}}</div>
 
-              <div class="down-btn">
+              <div class="down-btn" ng-click="incInterval(-1)">
                 <i class="fa fa-caret-down fa-3x" aria-hidden="true"></i>
               </div>
 
@@ -87,13 +87,13 @@
 
               <h4>BREAK</h4>
 
-              <div class="up-btn">
+              <div class="up-btn" ng-click="incBreak(1)">
                 <i class="fa fa-caret-up fa-3x" aria-hidden="true"></i>
               </div>
 
-              <div class="dial-val">{{"0"}}</div>
+              <div class="dial-val">{{breakVal}}</div>
 
-              <div class="down-btn">
+              <div class="down-btn" ng-click="incBreak(-1)">
                 <i class="fa fa-caret-down fa-3x" aria-hidden="true"></i>
               </div>
 
