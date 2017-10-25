@@ -4,10 +4,21 @@ app.controller('controller', [
 
   function($scope){
 
+    // Create instance of Timer object
+    $scope.timer = Timer();
+
     $scope.animation = {
       // String to display in center of timer ring
       timerString: "JPomo!",
     };
+
+
+    // Control buttons on bottom of left column
+    $scope.controlButtons = {
+      test: function(){
+        $scope.timer.api.test();
+      },
+    },
 
 
     // Timer settings
