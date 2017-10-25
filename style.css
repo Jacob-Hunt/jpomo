@@ -11,8 +11,7 @@ h1{
 
     text-align: center;
     font-family: 'Shrikhand', cursive;    
-}
-@media screen and (min-width: 980px){
+} @media screen and (min-width: 980px) {
 #left-col{ 
     min-height: 100vh;
 }}
@@ -37,7 +36,6 @@ h1{
 
 #bottom-buttons{
     padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 .btn-default{
