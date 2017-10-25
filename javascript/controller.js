@@ -4,7 +4,6 @@ app.controller('controller', [
 
   function($scope){
 
-
     $scope.animation = {
       // String to display in center of timer ring
       timerString: "JPomo!",
@@ -43,5 +42,6 @@ app.controller('controller', [
       },
 
     };
+
   },
 ]);
