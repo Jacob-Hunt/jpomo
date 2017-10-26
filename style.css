@@ -1,3 +1,14 @@
+body{
+    background-color: #410;
+}
+
+a{
+    color: #999;
+}
+a:hover{
+    color: #555;
+}
+
 h1{
     font-size: 3.5em;
 }
@@ -18,11 +29,20 @@ h1{
 }}
 
 #right-col{
-    background-color: #500;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    background-color: #410;
+    color: #fff;
+
+    font-family: 'Arial', sans-serif;
 }
 @media screen and (min-width: 980px) {
 #right-col{ 
     min-height: 100vh;
+    padding-top: 175px;
+    padding-left: 50px;
+    padding-right: 75px;
 }}
 
 #tomato-img > img{
