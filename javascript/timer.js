@@ -205,7 +205,7 @@ class Timer {
 
 /*
 
-// OLD CLASS
+// OLD SETTERS:
 
 var Timer = function(){
 
@@ -238,8 +238,5 @@ var Timer = function(){
       },
     },
 
-  // Initial render
-  thisTimer.timer.render();
-  return thisTimer;
 };
 */
