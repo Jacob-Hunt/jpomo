@@ -91,7 +91,7 @@ class Timer {
       render: function(){
 
         // Get amount of bar to show
-        root.variables.diff = ((root.percentLoaded / 100) * Math.PI*2*10).toFixed(2);
+        root.variables.diff = ((root.variables.percentLoaded / 100) * Math.PI*2*10).toFixed(2);
 
         // Clear canvas
         root.canvas.ctx.clearRect(0, 0, root.canvas.width, root.canvas.height);
