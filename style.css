@@ -11,14 +11,19 @@ h1{
 
     text-align: center;
     font-family: 'Shrikhand', cursive;    
-} @media screen and (min-width: 980px) {
+}
+@media screen and (min-width: 980px) {
 #left-col{ 
     min-height: 100vh;
 }}
 
 #right-col{
-    background-color: #fff
+    background-color: #500;
 }
+@media screen and (min-width: 980px) {
+#right-col{ 
+    min-height: 100vh;
+}}
 
 #tomato-img > img{
     width: 200px;
@@ -58,7 +63,6 @@ h1{
 .btn-default:hover{
     background-color: #aaa;
 }
-
 
 .center{
     text-align: center!important;
