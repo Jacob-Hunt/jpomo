@@ -5,7 +5,7 @@ app.controller('controller', [
   function($scope){
 
     // Create instance of Timer object
-    $scope.timer = Timer();
+    $scope.timer = new Timer("timer");
 
     $scope.animation = {
       // String to display in center of timer ring
