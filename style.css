@@ -38,6 +38,11 @@ h1{
     padding-top: 50px;
 }
 
+.dial-btn:hover{
+    cursor: pointer;
+    color: #aaa;
+}
+
 .btn-default{
     width: 90%;
 
