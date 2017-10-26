@@ -14,6 +14,8 @@ h1{
 }
 
 #left-col {
+    min-height: 100vh;
+
     padding: 25px;
     padding-top: 50px;
 
@@ -23,10 +25,6 @@ h1{
     text-align: center;
     font-family: 'Shrikhand', cursive;    
 }
-@media screen and (min-width: 980px) {
-#left-col{ 
-    min-height: 100vh;
-}}
 
 #right-col{
     padding-top: 50px;
