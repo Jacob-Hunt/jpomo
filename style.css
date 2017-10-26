@@ -38,6 +38,11 @@ h1{
     padding-top: 50px;
 }
 
+.dial-col{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .dial-btn:hover{
     cursor: pointer;
     color: #aaa;
@@ -50,6 +55,10 @@ h1{
 
     text-align: center;
 }
+.btn-default:hover{
+    background-color: #aaa;
+}
+
 
 .center{
     text-align: center!important;

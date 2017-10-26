@@ -22,10 +22,10 @@
      crossorigin="anonymous">
 
      <!-- Bootstrap Optional Stylesheet  -->
-     <link rel="stylesheet"
+     <!--link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-      crossorigin="anonymous">
+      crossorigin="anonymous"-->
 
     <link rel="stylesheet" href="style.css" type="text/css">
 
@@ -59,24 +59,26 @@
           <!-- Timer Dials/Canvas  -->
           <div class="row">
 
-            <div class="col-xs-4">
+            <div class="col-xs-4 dial-col">
+              <div class="dial-block">
 
-              <h4>WORK</h4>
+                <h4>WORK</h4>
 
-              <div>
-                <i class="fa fa-caret-up fa-3x dial-btn"
-                 aria-hidden="true"
-                 ng-click="settings.methods.incInterval(1)"></i>
+                <div>
+                  <i class="fa fa-caret-up fa-3x dial-btn"
+                   aria-hidden="true"
+                   ng-click="settings.methods.incInterval(1)"></i>
+                </div>
+
+                <div class="dial-val">{{settings.intervalVal}}</div>
+
+                <div>
+                  <i class="fa fa-caret-down fa-3x dial-btn"
+                   aria-hidden="true" 
+                   ng-click="settings.methods.incInterval(-1)"></i>
+                </div>
+
               </div>
-
-              <div class="dial-val">{{settings.intervalVal}}</div>
-
-              <div>
-                <i class="fa fa-caret-down fa-3x dial-btn"
-                 aria-hidden="true" 
-                 ng-click="settings.methods.incInterval(-1)"></i>
-              </div>
-
             </div>
 
 
@@ -87,24 +89,26 @@
             </div>
 
 
-            <div class="col-xs-4">
+            <div class="col-xs-4 dial-col">
+              <div class="dial-block">
 
-              <h4>BREAK</h4>
+                <h4>BREAK</h4>
 
-              <div>
-                <i class="fa fa-caret-up fa-3x dial-btn"
-                 aria-hidden="true"
-                 ng-click="settings.methods.incBreak(1)"></i>
+                <div>
+                  <i class="fa fa-caret-up fa-3x dial-btn"
+                   aria-hidden="true"
+                   ng-click="settings.methods.incBreak(1)"></i>
+                </div>
+
+                <div class="dial-val">{{settings.breakVal}}</div>
+
+                <div>
+                  <i class="fa fa-caret-down fa-3x dial-btn"
+                   aria-hidden="true"
+                   ng-click="settings.methods.incBreak(-1)"></i>
+                </div>
+
               </div>
-
-              <div class="dial-val">{{settings.breakVal}}</div>
-
-              <div>
-                <i class="fa fa-caret-down fa-3x dial-btn"
-                 aria-hidden="true"
-                 ng-click="settings.methods.incBreak(-1)"></i>
-              </div>
-
             </div>
 
           </div>
