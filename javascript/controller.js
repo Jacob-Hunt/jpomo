@@ -38,7 +38,7 @@ app.controller('controller', [
 
       // Convert from milliseconds
       refresh: function(){
-        $scope.timeLeft.stamp.minutes = Math.floor($scope.timeLeft.total / 60 / 1000);
+        $scope.timeLeft.stamp.minutes = Math.floor(($scope.timeLeft.total / 1000) / 60);
         $scope.timeLeft.stamp.seconds = ($scope.timeLeft.total / 1000) - ($scope.timeLeft.stamp.minutes * 60);
       },
     };
@@ -83,9 +83,9 @@ app.controller('controller', [
 
           // Adjust timer variables
           if($scope.variables.mode === "interval" && sign > 0){
-            $scope.timeLeft.total += 1000;
+            $scope.timeLeft.total += 60000;
           } else if($scope.variables.mode === "interval" && sign < 0){
-            $scope.timeLeft.total -+ 1000;
+            $scope.timeLeft.total -= 60000;
           }
           $scope.timeLeft.refresh();
 
