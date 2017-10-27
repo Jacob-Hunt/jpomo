@@ -67,7 +67,7 @@
                 <div class="btn dial-btn">
                   <i class="fa fa-caret-up fa-3x"
                    aria-hidden="true"
-                   ng-click="settings.methods.incInterval(1)"></i>
+                   ng-click="settings.methods.incInterval('work', 1)"></i>
                 </div>
 
                 <div class="dial-val">{{settings.intervalVal}}</div>
@@ -75,7 +75,7 @@
                 <div class="btn dial-btn">
                   <i class="fa fa-caret-down fa-3x dial-btn"
                    aria-hidden="true" 
-                   ng-click="settings.methods.incInterval(-1)"></i>
+                   ng-click="settings.methods.incInterval('work', -1)"></i>
                 </div>
 
               </div>
@@ -97,7 +97,7 @@
                 <div class="btn dial-btn">
                   <i class="fa fa-caret-up fa-3x dial-btn"
                    aria-hidden="true"
-                   ng-click="settings.methods.incBreak(1)"></i>
+                   ng-click="settings.methods.incInterval('break', 1)"></i>
                 </div>
 
                 <div class="dial-val">{{settings.breakVal}}</div>
@@ -105,7 +105,7 @@
                 <div class="btn dial-btn">
                   <i class="fa fa-caret-down fa-3x dial-btn"
                    aria-hidden="true"
-                   ng-click="settings.methods.incBreak(-1)"></i>
+                   ng-click="settings.methods.incInterval('break', -1)"></i>
                 </div>
 
               </div>

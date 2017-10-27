@@ -78,43 +78,48 @@ app.controller('controller', [
       breakVal: $scope.constants.INITIAL_BREAK_VALUE,
 
       methods: {
-        // Adjust interval length setting
-        incInterval: function(sign){        
+        // Adjust work/break interval length setting
+        incInterval: function(mode, sign){
+
+          // Set variable for indicating weather to adjust current time left
+          switch(mode){
+            case "work":
+              watchSign = "interval";
+              dialVar = "intervalVal";
+              break;
+            case "break":
+              watchSign = "break";
+              dialVar = "breakVal";
+              break;
+            default:
+              console.log("Error: invalid argument[0] for incInterval(mode, sign)");
+              return -1;
+          }
+
           // Adjust dial display
           if(sign > 0){
-            $scope.settings.intervalVal++;
+            $scope.settings[dialVar]++;
           } else if (sign < 0 && $scope.settings.intervalVal > 0) {
-            $scope.settings.intervalVal--;
+            $scope.settings[dialVar]--;
           } else {
-            return;
+            console.log("Error: invalid argument[1] for incInterval(mode, sign)");
+            return -1;
           }
 
           // Adjust timer variables
-          if($scope.variables.mode === "interval" && sign > 0){
+          if($scope.variables.mode === watchSign && sign > 0){
             $scope.timeLeft.total += 60000;
-          } else if($scope.variables.mode === "interval" && sign < 0){
+          } else if($scope.variables.mode === watchSign && sign < 0){
             $scope.timeLeft.total -= 60000;
           }
           $scope.timeLeft.refresh();
 
           // Render new timestamp
           $scope.animation.setTimerString($scope.timeLeft.stamp.minutes,
-                                          $scope.timeLeft.stamp.seconds);
-          
+                                          $scope.timeLeft.stamp.seconds);          
         },
 
-        // Adjust break length setting
-        incBreak: function(sign){
-          if(sign > 0){
-            $scope.settings.breakVal++;
-          } else if (sign < 0 && $scope.settings.breakVal > 0) {
-            $scope.settings.breakVal--;
-          } else {
-            return;
-          }
-        },
       },
-
     };
 
     // Code to be called on controller load
