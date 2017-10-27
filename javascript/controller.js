@@ -6,17 +6,17 @@ app.controller('controller', [
 
     // Create instance of Timer object
     $scope.timer = new Timer("timer");
+    $scope.timer.isRunning = false;
 
     $scope.animation = {
       // String to display in center of timer ring
-      timerString: "JPomo!",
+      timerString: "00:00",
     };
-
 
     // Control buttons on bottom of left column
     $scope.controlButtons = {
       test: function(){
-        $scope.timer.api.test();
+        $scope.timer.test();
       },
     },
 
@@ -54,5 +54,9 @@ app.controller('controller', [
 
     };
 
+    // Code to be called on controller load
+    $scope.timer.setConfig("getText", function(){
+        return $scope.animation.timerString;
+    });
   },
 ]);

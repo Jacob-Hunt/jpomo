@@ -169,7 +169,7 @@ class Timer {
 
   test(){
     // Test the widget by incrimenting to 100%
-    this.methods.incrimentTo(100);
+    this.methods.incrimentTo(50);
   }
 
   incrimentTo(num){
@@ -197,6 +197,7 @@ class Timer {
     // functions for config object
 
     this.config[setProp] = setVal;
+    this.methods.render();
 
     return 1;
   }
