@@ -38,9 +38,7 @@ h1{
 @media screen and (min-width: 980px) {
 #right-col{ 
     min-height: 100vh;
-    padding-top: 175px;
-    padding-left: 50px;
-    padding-right: 75px;
+    padding-top: 50px;
 }}
 
 #tomato-img > img{
@@ -59,6 +57,17 @@ h1{
 
 #bottom-buttons{
     padding-top: 30px;
+}
+
+#yt-vid{
+    padding-top: 25px;
+}
+
+#yt-vid > iframe{
+    border-style: solid;
+    border-width: 15px;
+    border-color: black;
+    border-radius: 15px;
 }
 
 .dial-col{

@@ -10,7 +10,7 @@ app.controller('controller', [
 
     $scope.animation = {
       // String to display in center of timer ring
-      timerString: "00:00",
+      timerString: "25:00",
     };
 
     // Control buttons on bottom of left column
