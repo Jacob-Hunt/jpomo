@@ -48,8 +48,16 @@ app.controller('controller', [
       // String to display in center of timer ring
       timerString: "25:00",
 
+      // Generate new timerString value
       setTimerString: function(min, sec){
-        $scope.animation.timerString = min.toString() + ":" + sec.toString();
+        // Generate string
+        $scope.animation.timerString = min.toString() + ":";
+        if(sec < 10){
+          $scope.animation.timerString += "0";
+        }
+        $scope.animation.timerString += sec.toString();
+
+        // Refresh display
         $scope.timerWidget.methods.render();
       }
     };
