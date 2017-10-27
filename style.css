@@ -39,6 +39,10 @@ h1{
 #right-col{ 
     min-height: 100vh;
     padding-top: 50px;
+
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    border-color: black;
 }}
 
 #tomato-img > img{
@@ -65,9 +69,8 @@ h1{
 
 #yt-vid > iframe{
     border-style: solid;
-    border-width: 15px;
+    border-width: 1px;
     border-color: black;
-    border-radius: 15px;
 }
 
 .dial-col{
