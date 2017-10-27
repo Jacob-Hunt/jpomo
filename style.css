@@ -82,6 +82,13 @@ h1{
     cursor: pointer;
     color: #aaa;
 }
+.dial-btn:active{
+    color: #888;
+    box-shadow: none;
+}
+.dial-btn:active > i{
+    text-shadow: 0 0 15px black;
+}
 
 .btn-default{
     width: 90%;
