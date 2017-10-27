@@ -7,11 +7,10 @@ app.controller('controller', [
     $scope.constants = {
       INITIAL_INTERVAL_VALUE: 25,
       INITIAL_BREAK_VALUE: 5,
+
+      SECOND: 1000,
+      MINUTE: 60000,
     };
-
-
-    // Create instance of Timer object
-    $scope.timerWidget = new Timer("timer");
 
 
     $scope.variables = {
@@ -23,10 +22,51 @@ app.controller('controller', [
     };
 
 
+    // Create instance of Timer object
+    $scope.timerWidget = new Timer("timer");
+
+
+    // Control buttons on bottom of left column
+    $scope.controlButtons = {
+
+      // Test function for debugging purposes
+      test: function(){
+        switch($scope.variables.isRunning){
+          case true:
+            $scope.variables.isRunning = false;
+            break;
+          case false:
+            $scope.variables.isRunning = true;
+            break;
+        }
+        $scope.timerWidget.test();
+      },
+
+      // Start button
+      start: function(){
+        $scope.variables.isRunning = true;
+        $scope.ticker.clock = setInterval($scope.ticker.tick,
+                                          $scope.constants.SECOND);
+      },
+
+    };
+
+
+    $scope.ticker = {
+      clock: undefined,
+      tick: function(){
+        $scope.timeLeft.total -= $scope.constants.SECOND;
+        $scope.timeLeft.refresh();
+        $scope.animation.setTimerString($scope.timeLeft.stamp.minutes,
+                                        $scope.timeLeft.stamp.seconds);
+      },
+    };
+
+
     // Amount of time left in countdown
     $scope.timeLeft = {
       // Milliseconds
-      total: $scope.constants.INITIAL_INTERVAL_VALUE * 60 * 1000,
+      total: $scope.constants.INITIAL_INTERVAL_VALUE * $scope.constants.MINUTE,
 
       // Values for timestamp to show at center of timer
       stamp:{
@@ -59,21 +99,6 @@ app.controller('controller', [
         $scope.timerWidget.methods.render();
       }
     };
-
-    // Control buttons on bottom of left column
-    $scope.controlButtons = {
-      test: function(){
-        switch($scope.variables.isRunning){
-          case true:
-            $scope.variables.isRunning = false;
-            break;
-          case false:
-            $scope.variables.isRunning = true;
-            break;
-        }
-        $scope.timerWidget.test();
-      },
-    },
 
 
     // Timer settings
