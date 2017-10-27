@@ -76,8 +76,9 @@ app.controller('controller', [
 
       // Convert from milliseconds
       refresh: function(){
-        $scope.timeLeft.stamp.minutes = Math.floor(($scope.timeLeft.total / 1000) / 60);
-        $scope.timeLeft.stamp.seconds = ($scope.timeLeft.total / 1000) - ($scope.timeLeft.stamp.minutes * 60);
+        $scope.timeLeft.stamp.minutes = Math.floor($scope.timeLeft.total / $scope.constants.MINUTE);
+        $scope.timeLeft.stamp.seconds = ($scope.timeLeft.total / $scope.constants.SECOND)
+                                         - ($scope.timeLeft.stamp.minutes * 60);
       },
     };
 
