@@ -192,13 +192,13 @@ class Timer {
     return this.canvas;
   }
 
-  set(setObj){
+  setConfig(setProp, setVal){
     // Set configurable properties of timer; to replace old setter
     // functions for config object
 
-    // TODO
+    this.config[setProp] = setVal;
 
-    return "Set() has not yet been implimented :(";
+    return 1;
   }
 
 }
