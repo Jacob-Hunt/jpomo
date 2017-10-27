@@ -21,12 +21,7 @@
      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
      crossorigin="anonymous">
 
-     <!-- Bootstrap Optional Stylesheet  -->
-     <!--link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-      crossorigin="anonymous"-->
-
+    <!-- Local CSS -->
     <link rel="stylesheet" href="style.css" type="text/css">
 
     <!-- * * * OTHER HEAD TAGS * * * -->
@@ -117,7 +112,7 @@
           <div class="row" id="bottom-buttons">
             <div class="col-xs-6">
               <div class="btn btn-default btn-bot" ng-click="controlButtons.start()" ng-show="!variables.isRunning">Start</div>
-              <div class="btn btn-default btn-bot" ng-click="controlButtons.test()" ng-show="variables.isRunning">Pause</div>
+              <div class="btn btn-default btn-bot" ng-click="controlButtons.pause()" ng-show="variables.isRunning">Pause</div>
             </div>
             <div class="col-xs-6">
               <div class="btn btn-default btn-bot" ng-click="animation.setTimerString(5, 25)">Reset</div>

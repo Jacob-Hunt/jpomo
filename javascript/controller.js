@@ -49,6 +49,12 @@ app.controller('controller', [
                                           $scope.constants.SECOND);
       },
 
+      // Pause button
+      pause: function(){
+        $scope.variables.isRunning = false;
+        clearInterval($scope.ticker.clock);
+      },
+
     };
 
 
