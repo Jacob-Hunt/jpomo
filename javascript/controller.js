@@ -74,14 +74,43 @@ app.controller('controller', [
 
     };
 
-
+    // Interval timer for making pomodoro timer count down
     $scope.ticker = {
       clock: undefined,
+
+      // Every time the clock ticks...
       tick: function(){
         $scope.timeLeft.total -= $scope.constants.SECOND;
         $scope.timeLeft.refresh();
         $scope.animation.setTimerString($scope.timeLeft.stamp.minutes,
                                         $scope.timeLeft.stamp.seconds);
+        // If timer reaches zero
+        if($scope.timeLeft.total <= 0){
+          $scope.ticker.switchModes();
+        }
+      },
+
+      // Switch to/from work/break modes
+      switchModes: function(){
+        switch($scope.variables.mode){
+          case "interval":
+            $scope.variables.mode = "break";
+            $scope.timeLeft.total = $scope.settings.breakVal * $scope.constants.MINUTE;
+            $scope.timeLeft.refresh();
+            $scope.animation.setTimerString($scope.timeLeft.stamp.minutes, $scope.timeLeft.stamp.seconds);
+            break;
+          case "break":
+            $scope.variables.mode = "interval";
+            $scope.timeLeft.total = $scope.settings.intervalVal * $scope.constants.MINUTE;
+            $scope.timeLeft.refresh();
+            $scope.animation.setTimerString($scope.timeLeft.stamp.minutes, $scope.timeLeft.stamp.seconds);
+            break;
+          default:
+            console.log("Error: invalid argument for switch statement in $scope.ticker.switchModes()");
+            return -1;
+        }
+        // TODO: play a sound
+
       },
     };
 
