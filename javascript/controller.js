@@ -55,6 +55,23 @@ app.controller('controller', [
         clearInterval($scope.ticker.clock);
       },
 
+      // Reset button
+      reset: function(){
+        // Stop timer
+        $scope.variables.isRunning = false;
+        if($scope.ticker.clock){
+          clearInterval($scope.ticker.clock);
+        }
+
+        // Return to interval mode
+        $scope.variables.mode = "interval";
+
+        // Calculate time left and render
+        $scope.timeLeft.total = $scope.settings.intervalVal * $scope.constants.MINUTE;
+        $scope.timeLeft.refresh();
+        $scope.animation.setTimerString($scope.timeLeft.stamp.minutes, $scope.timeLeft.stamp.seconds);
+      },
+
     };
 
 
