@@ -14,6 +14,7 @@ app.controller('controller', [
 
       setTimerString: function(min, sec){
         $scope.animation.timerString = min.toString() + ":" + sec.toString();
+        $scope.timer.methods.render();
       }
     };
 
