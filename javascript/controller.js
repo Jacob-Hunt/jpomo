@@ -18,14 +18,12 @@ app.controller('controller', [
       // Is timer currently counting down?
       isRunning: false,
 
-      // How much time does countdown have left (in units of milliseconds)
-      timeLeft: $scope.constants.INITIAL_INTERVAL_VALUE * 60 * 1000,
-
       // Is timer in interval mode or break mode
       mode: "interval",
     };
 
 
+    // Amount of time left in countdown
     $scope.timeLeft = {
       // Milliseconds
       total: $scope.constants.INITIAL_INTERVAL_VALUE * 60 * 1000,
@@ -65,6 +63,14 @@ app.controller('controller', [
     // Control buttons on bottom of left column
     $scope.controlButtons = {
       test: function(){
+        switch($scope.variables.isRunning){
+          case true:
+            $scope.variables.isRunning = false;
+            break;
+          case false:
+            $scope.variables.isRunning = true;
+            break;
+        }
         $scope.timerWidget.test();
       },
     },
