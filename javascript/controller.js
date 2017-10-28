@@ -88,6 +88,8 @@ app.controller('controller', [
         if($scope.timeLeft.total <= 0){
           $scope.ticker.switchModes();
           $scope.audio.cuckoo.play();
+        } else {
+          $scope.audio.tick.play();
         }
       },
 
@@ -156,6 +158,7 @@ app.controller('controller', [
 
     $scope.audio = {
       cuckoo: new Audio("./cuckoo.mp3"),
+      tick: new Audio("./tick.mp3"),
     };
 
 
