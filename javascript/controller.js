@@ -84,6 +84,7 @@ app.controller('controller', [
         $scope.timeLeft.refresh();
         $scope.animation.setTimerString($scope.timeLeft.stamp.minutes,
                                         $scope.timeLeft.stamp.seconds);
+        $scope.animation.updateBar();
         // If timer reaches zero
         if($scope.timeLeft.total <= 0){
           $scope.ticker.switchModes();
@@ -91,6 +92,7 @@ app.controller('controller', [
         } else {
           $scope.audio.tick.play();
         }
+
       },
 
       // Switch to/from work/break modes
@@ -152,7 +154,29 @@ app.controller('controller', [
 
         // Refresh display
         $scope.timerWidget.methods.render();
-      }
+      },
+
+      updateBar: function(){
+        var multiplier;
+        switch($scope.variables.mode){
+          case "interval":
+            multiplier = $scope.settings.intervalVal;
+            break;
+          case "break":
+            multiplier = $scope.settings.breakVal;
+            break;
+          default:
+            console.log("Error: invalid agument for switch statement in $scope.animation.updateBar()");
+            return -1;
+        }
+
+        // Calculate how much of bar to fill in
+        var totalTime = multiplier * $scope.constants.MINUTE;
+        var timePassed = totalTime - $scope.timeLeft.total;
+        var ratio = timePassed / totalTime;
+        var percentPassed = Math.floor(100 * ratio);
+        $scope.timerWidget.incrimentTo(percentPassed);
+      },
     };
 
 
