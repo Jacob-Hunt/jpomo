@@ -72,6 +72,12 @@ h1{
     border-width: 1px;
     border-color: black;
 }
+@media screen and (min-width: 600px){
+#yt-vid > iframe{
+    width: 400px;
+    height: 225px;
+}}
+
 
 .dial-col{
     padding-top: 40px;
