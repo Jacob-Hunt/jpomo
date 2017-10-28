@@ -50,9 +50,23 @@ h1{
     height: 200px;
 }
 
+@media screen and (min-width: 989px){
 #timer-column{
-    padding-top: 25px;
-}
+    padding-top: 50px;
+}}
+@media screen and (min-width: 725px) and (max-width: 989px){
+#timer-column{
+    padding-top: 0px;
+}}
+@media screen and (min-width: 475px) and (max-width: 724px){
+#timer-column{
+    padding-top: 50px;
+}}
+@media screen and (max-width: 474px){
+#timer-column{
+    padding-top: 80px;
+}}
+
 
 #timer{
     width: 100%;
@@ -76,6 +90,10 @@ h1{
 #yt-vid > iframe{
     width: 400px;
     height: 225px;
+}}
+@media screen and (max-width: 329px){
+#yt-vid > iframe{
+    width: 100%;
 }}
 
 
