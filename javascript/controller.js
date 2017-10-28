@@ -87,6 +87,7 @@ app.controller('controller', [
         // If timer reaches zero
         if($scope.timeLeft.total <= 0){
           $scope.ticker.switchModes();
+          $scope.audio.cuckoo.play();
         }
       },
 
@@ -109,9 +110,8 @@ app.controller('controller', [
             console.log("Error: invalid argument for switch statement in $scope.ticker.switchModes()");
             return -1;
         }
-        // TODO: play a sound
-
       },
+
     };
 
 
@@ -151,6 +151,11 @@ app.controller('controller', [
         // Refresh display
         $scope.timerWidget.methods.render();
       }
+    };
+
+
+    $scope.audio = {
+      cuckoo: new Audio("./cuckoo.mp3"),
     };
 
 
