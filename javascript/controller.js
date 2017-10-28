@@ -66,6 +66,9 @@ app.controller('controller', [
         // Return to interval mode
         $scope.variables.mode = "interval";
 
+        // Reset progress bar
+        $scope.timerWidget.reset();
+
         // Calculate time left and render
         $scope.timeLeft.total = $scope.settings.intervalVal * $scope.constants.MINUTE;
         $scope.timeLeft.refresh();
@@ -89,6 +92,7 @@ app.controller('controller', [
         if($scope.timeLeft.total <= 0){
           $scope.ticker.switchModes();
           $scope.audio.cuckoo.play();
+          setTimeout(function(){$scope.timerWidget.reset()}, $scope.constants.SECOND);
         } else {
           $scope.audio.tick.play();
         }

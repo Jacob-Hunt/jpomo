@@ -158,6 +158,13 @@ class Timer {
         }, root.constants.INCRIMENT_RATE);
       },
 
+
+      // Reset counter to zero
+      reset: function(){
+        root.variables.percentLoaded = 0;
+        root.methods.render();
+      },
+
     };
 
     // Render to canvas on instance creation
@@ -180,6 +187,11 @@ class Timer {
   render(){
     // Provide public access to render method
     this.methods.render();    
+  }
+
+  reset(){
+    // Reset progress bar
+    this.methods.reset();
   }
 
   getDivID(){
